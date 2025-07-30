@@ -1,7 +1,7 @@
 import TiledGallery from "./GalleryToptoBot";
 import React, { useEffect, useState } from "react";
 import { Calendar, MapPin, Users, Zap } from "lucide-react";
-//
+
 const Hero = () => {
   const [shootingStars, setShootingStars] = useState<Array<{
     id: number;
