@@ -116,7 +116,7 @@ const Hero = () => {
             </div>
 
             <img
-              src="/assest/img/Deepsprint-logo.png"
+              src="../../../assest/Deepsprint-logo.jpg"
               alt="DeepSprint 2025"
               className="h-auto w-full max-w-5xl mb-6 mx-auto block"
             />
