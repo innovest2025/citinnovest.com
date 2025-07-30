@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 // import Head from "next/head";
 // No need for Image import as we're using standard img tag
-
+//
 const Hero = () => {
   // State for shooting stars
   const [shootingStars, setShootingStars] = useState<
