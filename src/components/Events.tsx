@@ -31,13 +31,13 @@ const EventModal: React.FC<EventModalProps> = ({ isOpen, onClose, day }) => {
         title: "Ideathon",
         description:
           "Dive into a high-energy brainstorming challenge where innovation meets creativity. Pitch your unique solutions to real-world problems and compete with the best minds!",
-        formLink: "https://forms.gle/tkeKPGQ4VKH1BnjBA",
+        formLink: "https://forms.gle/tkeKPGQ4VkHJBnjBA",
       },
       {
         title: "Project Competition",
         description:
           "Showcase your innovative projects and prototypes in front of industry experts. Gain valuable feedback and recognition for your hard work and creativity.",
-        formLink: "https://forms.gle/tkeKPGQ4VKH1BnjBA",
+        formLink: "https://forms.gle/tkeKPGQ4VkHJBnjBA",
       },
     ],
     "Day 3": [
@@ -52,7 +52,7 @@ const EventModal: React.FC<EventModalProps> = ({ isOpen, onClose, day }) => {
 
         description:
           "Join us for an exciting Demo Day where startups showcase their innovative solutions. Experience the future of technology and entrepreneurship firsthand!",
-        formLink: "https://forms.gle/zFXDYKMSeraLkbqC8",
+        formLink: "https://forms.gle/zFXDyKMSEraLkDqc8",
       },
     ],
   };
