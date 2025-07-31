@@ -285,7 +285,7 @@ const EventsGallery = () => {
           <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden group">
             <div className="aspect-[16/10] relative">
               <img
-                src={`../assest/${currentImage}.jpeg`}
+                src={`../../assest/${currentImage}.jpeg`}
                 alt={`${currentEvent.title}`}
                 className="w-full h-full object-cover transition-all duration-1000 ease-in-out transform group-hover:scale-105"
                 key={currentImageIndex}
@@ -322,7 +322,7 @@ const EventsGallery = () => {
                 }`}
               >
                 <img
-                  src={`../assest/${imageName}.jpeg`}
+                  src={`../../assest/${imageName}.jpeg`}
                   alt={`${currentEvent.title} - ${index}`}
                   className="w-16 h-12 object-cover"
                 />
