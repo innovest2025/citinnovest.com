@@ -45,7 +45,7 @@ const EventModal: React.FC<EventModalProps> = ({ isOpen, onClose, day }) => {
         title: "Product Showcase",
         description:
           "Experience the latest innovations from startups and entrepreneurs. Explore groundbreaking products and services that are shaping the future of technology.",
-        formLink: "https://forms.gle/example3",
+        formLink: "https://forms.gle/p5JUZuVY3Utf3Gn77",
       },
       {
         title: "Demo day",
