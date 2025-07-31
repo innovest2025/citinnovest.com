@@ -12,7 +12,7 @@ import {
   Pause,
 } from "lucide-react"
 import Header from "./Header";
-import w1 from "././assest/w1.jpeg";
+import w1 from "../../assest/w1.jpeg";
 import w2 from "../../assest/w2.jpeg";
 import w3 from "../../assest/w3.jpeg";
 import w4 from "../../assest/w4.jpeg";
