@@ -12,11 +12,11 @@ import {
   Pause,
 } from "lucide-react"
 import Header from "./Header";
-import w1 from "../assest/w1.jpeg";
-import w2 from "../assest/w2.jpeg";
-import w3 from "../assest/w3.jpeg";
-import w4 from "../assest/w4.jpeg";
-import w5 from "../assest/w5.jpeg";
+import w1 from "././assest/w1.jpeg";
+import w2 from "../../assest/w2.jpeg";
+import w3 from "../../assest/w3.jpeg";
+import w4 from "../../assest/w4.jpeg";
+
 
 const EventsGallery = () => {
   // Set active link for the header
@@ -285,7 +285,7 @@ const EventsGallery = () => {
           <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden group">
             <div className="aspect-[16/10] relative">
               <img
-                src={`/assest/${currentImage}.jpeg`}
+                src={`../assest/${currentImage}.jpeg`}
                 alt={`${currentEvent.title}`}
                 className="w-full h-full object-cover transition-all duration-1000 ease-in-out transform group-hover:scale-105"
                 key={currentImageIndex}
@@ -308,7 +308,7 @@ const EventsGallery = () => {
             ></div>
           </div>
           <div className="flex justify-center mt-6 space-x-3">
-            {currentEvent.images.map((currentImage, index) => (
+            {currentEvent.images.map((imageName, index) => (
               <button
                 key={index}
                 onClick={() => {
@@ -322,7 +322,7 @@ const EventsGallery = () => {
                 }`}
               >
                 <img
-                  src={`/assest/${currentImage}.jpeg`}
+                  src={`../assest/${imageName}.jpeg`}
                   alt={`${currentEvent.title} - ${index}`}
                   className="w-16 h-12 object-cover"
                 />
