@@ -84,7 +84,7 @@ const Footer = () => {
               ))}
             </ul>
             <div>
-              <h4 className="text-base font-semibold mb-3">Follow Us</h4> {/* Changed to h4 and adjusted font size */}
+              <h4 className="text-base font-semibold mb-3">Follow Us!!!</h4> {/* Changed to h4 and adjusted font size */}
               <div className="flex space-x-4"> {/* Adjusted space-x for social icons */}
                 <a
                   href="https://www.linkedin.com/company/citbif/"
