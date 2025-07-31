@@ -12,6 +12,11 @@ import {
   Pause,
 } from "lucide-react"
 import Header from "./Header";
+import w1 from "../../assest/w1.jpeg";
+import w2 from "../../assest/w2.jpeg";
+import w3 from "../../assest/w3.jpeg";
+import w4 from "../../assest/w4.jpeg";
+
 
 const EventsGallery = () => {
   // Set active link for the header
@@ -129,6 +134,7 @@ const EventsGallery = () => {
   if (!selectedEvent) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-gray-100 relative overflow-hidden">
+        <Header />
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {[...Array(25)].map((_, i) => (
             <div
@@ -279,7 +285,7 @@ const EventsGallery = () => {
           <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden group">
             <div className="aspect-[16/10] relative">
               <img
-                src={`/img/${currentImage}.jpeg`}
+                src={`/assest/${currentImage}.jpeg`}
                 alt={`${currentEvent.title}`}
                 className="w-full h-full object-cover transition-all duration-1000 ease-in-out transform group-hover:scale-105"
                 key={currentImageIndex}
@@ -316,7 +322,7 @@ const EventsGallery = () => {
                 }`}
               >
                 <img
-                  src={`/img/${imageName}.jpeg`}
+                  src={`/assest/${imageName}.jpeg`}
                   alt={`${currentEvent.title} - ${index}`}
                   className="w-16 h-12 object-cover"
                 />
