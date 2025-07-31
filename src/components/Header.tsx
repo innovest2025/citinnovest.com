@@ -211,7 +211,7 @@ const Header = () => {
               to="/gallery_header"
               className="ml-2 bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white px-5 py-2.5 rounded-md text-sm font-medium shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 whitespace-nowrap"
             >
-              Gallery of 2025
+              Gallery of 2024
             </Link> 
           </div>
 
