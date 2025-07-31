@@ -16,7 +16,7 @@ import w1 from "../../assest/w1.jpeg";
 import w2 from "../../assest/w2.jpeg";
 import w3 from "../../assest/w3.jpeg";
 import w4 from "../../assest/w4.jpeg";
-
+import w5 from "../../assest/w5.jpeg";
 
 const EventsGallery = () => {
   // Set active link for the header
