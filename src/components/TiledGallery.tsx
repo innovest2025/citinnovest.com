@@ -1,164 +1,127 @@
+import React, { useState, useEffect } from "react";
+import innovest0 from "../img/imgs/innovest-0.jpg";
+import innovest1 from "../img/imgs/innovest-1.png";
+import innovest2 from "../img/imgs/innovest-2.png";
+import innovest3 from "../img/imgs/innovest-3.png";
+import innovest4 from "../img/imgs/innovest-4.png";
+import innovest5 from "../img/imgs/innovest-5.png";
+import innovest6 from "../img/imgs/innovest-6.png";
+import innovest7 from "../img/imgs/innovest-7.jpg";
+import innovest8 from "../img/imgs/innovest-8.jpg";
+import innovest9 from "../img/imgs/innovest-9.jpg";
+import innovest10 from "../img/imgs/innovest-10.jpg";
+import innovest11 from "../img/imgs/innovest-11.jpg";
+import innovest12 from "../img/imgs/innovest-12.jpg";
+import innovest13 from "../img/imgs/innovest-13.jpg";
+import innovest14 from "../img/imgs/innovest-14.jpg";
+import innovest15 from "../img/imgs/innovest-15.jpg";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import innovest0 from '../img/imgs/innovest-0.jpg';
-import innovest1 from '../img/imgs/innovest-1.png';
-import innovest2 from '../img/imgs/innovest-2.png';
-import innovest3 from '../img/imgs/innovest-3.png';
-import innovest4 from '../img/imgs/innovest-4.png';
-import innovest5 from '../img/imgs/innovest-5.png';
-import innovest6 from '../img/imgs/innovest-6.png';
-import innovest7 from '../img/imgs/innovest-7.jpg';
-import innovest8 from '../img/imgs/innovest-8.jpg';
-import innovest9 from '../img/imgs/innovest-9.jpg';
-import innovest10 from '../img/imgs/innovest-10.jpg';
-import innovest11 from '../img/imgs/innovest-11.jpg';
-import innovest12 from '../img/imgs/innovest-12.jpg';
-import innovest13 from '../img/imgs/innovest-13.jpg';
-import innovest14 from '../img/imgs/innovest-14.jpg';
-import innovest15 from '../img/imgs/innovest-15.jpg';
-import React, { useEffect, useState, useRef } from "react";
+const images = [
+  { src: innovest0, caption: "Opening Ceremony" },
+  { src: innovest1, caption: "Innovative Projects" },
+  { src: innovest2, caption: "Team Collaboration" },
+  { src: innovest3, caption: "Hackathon Coding" },
+  { src: innovest4, caption: "AI & IoT Demos" },
+  { src: innovest5, caption: "Judging Panel" },
+  { src: innovest6, caption: "Networking Sessions" },
+  { src: innovest7, caption: "Pitch Presentations" },
+  { src: innovest8, caption: "Award Ceremony" },
+  { src: innovest9, caption: "Workshops" },
+  { src: innovest10, caption: "Team Strategy" },
+  { src: innovest11, caption: "Prototyping" },
+  { src: innovest12, caption: "Keynote Speeches" },
+  { src: innovest13, caption: "Group Discussions" },
+  { src: innovest14, caption: "Tech Innovations" },
+  { src: innovest15, caption: "Grand Finale" },
+];
 
-// Preload images to avoid flicker
-const preloadImages = (srcs: string[]): Promise<void> => {
-  return Promise.all(
-    srcs.map(
-      (src) =>
-        new Promise<void>((resolve) => {
-          const img = new window.Image();
-          img.src = src;
-          img.onload = img.onerror = () => resolve();
-        })
-    )
-  ).then(() => undefined);
-};
+const KenBurnsSlideshow: React.FC = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const intervalTime = 4000; // 4s per slide
 
-// Carousel row with animated scrolling
-const CarouselRow: React.FC<{ images: string[]; speed: number; reverse?: boolean }> = ({
-  images,
-  speed,
-  reverse,
-}) => {
-  const rowRef = useRef<HTMLDivElement>(null);
-  const [offset, setOffset] = useState(0);
-  const [imageWidth, setImageWidth] = useState(320);
-
-  // Responsive image width
   useEffect(() => {
-    const handleResize = () => {
-      setImageWidth(Math.max(window.innerWidth / 5, 320));
-    };
-    handleResize(); // Initial sizing
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, intervalTime);
+
+    return () => clearInterval(interval);
   }, []);
 
-  const gap = 28;
-  const totalWidth = images.length * (imageWidth + gap);
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+  };
 
-  // Animation logic
-  useEffect(() => {
-    let raf: number;
-    let lastTime = performance.now();
-    const animate = (time: number) => {
-      const dt = time - lastTime;
-      lastTime = time;
-      setOffset((prev) => {
-        let next = prev + (reverse ? -1 : 1) * (speed * dt) / 1000;
-        if (next > totalWidth) next = 0;
-        if (next < 0) next = totalWidth;
-        return next;
-      });
-      raf = requestAnimationFrame(animate);
-    };
-    raf = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(raf);
-  }, [speed, reverse, totalWidth]);
-
-  const displayImages = [...images, ...images]; // Duplicate for seamless scroll
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
 
   return (
-    <div className="flex items-center w-screen overflow-hidden" style={{ height: imageWidth * 0.65 }}>
-      <div
-        className="flex"
-        style={{
-          gap: `${gap}px`,
-          transform: `translateX(-${offset}px)`,
-          transition: "transform 0.1s linear",
-          willChange: "transform",
-        }}
-        ref={rowRef}
-      >
-        {displayImages.map((img, idx) => (
+    <section className="w-full bg-black py-12 flex flex-col items-center text-white">
+      <h2 className="text-3xl font-bold mb-6">Gallery</h2>
+      <div className="relative w-full max-w-6xl h-[600px] rounded-xl overflow-hidden shadow-xl">
+        {images.map((image, index) => (
           <div
-            key={idx}
-            className="rounded-2xl shadow-2xl bg-cover bg-center"
-            style={{
-              width: imageWidth,
-              height: imageWidth * 0.65,
-              backgroundImage: `url(${img})`,
-              cursor: "pointer",
-            }}
-            onClick={() => window.open(img, "_blank", "noopener")}
-          />
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              index === currentIndex ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <img
+              src={image.src}
+              alt={`Slide ${index}`}
+              className={`w-full h-full object-cover transform transition-transform duration-[4000ms] ${
+                index === currentIndex ? "scale-110" : "scale-100"
+              }`}
+            />
+            {/* Caption */}
+            {index === currentIndex && (
+              <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 bg-black/50 px-6 py-3 rounded-lg text-xl font-semibold animate-slide-up">
+                {image.caption}
+              </div>
+            )}
+          </div>
         ))}
-      </div>
-    </div>
-  );
-};
 
+        {/* Navigation Buttons */}
+        <button
+          onClick={handlePrev}
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/40 p-3 rounded-full transition"
+        >
+          <ChevronLeft className="h-6 w-6 text-white" />
+        </button>
+        <button
+          onClick={handleNext}
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/40 p-3 rounded-full transition"
+        >
+          <ChevronRight className="h-6 w-6 text-white" />
+        </button>
 
-// Main gallery component
-const TiledGallery: React.FC = () => {
-  const [imagesReady, setImagesReady] = useState(false);
-
-  const images = [
-    innovest0,
-    innovest1,
-    innovest2,
-    innovest3,
-    innovest4,
-    innovest5,
-    innovest6,
-    innovest7,
-    innovest8,
-    innovest9,
-    innovest10,
-    innovest11,
-    innovest12,
-    innovest13,
-    innovest14,
-    innovest15,
-  ];
-
-  useEffect(() => {
-    // Preload images for smooth experience
-    preloadImages(images).then(() => setImagesReady(true));
-  }, [images]);
-
-  const rowCount = 3;
-  const rows: string[][] = Array.from({ length: rowCount }, (_, i) =>
-    images.filter((_, idx) => idx % rowCount === i)
-  );
-  const speeds = [15, 20, 30];
-
-  return (
-    <section className="py-16 bg-slate-50">
-      <div className="w-screen px-0">
-        <h2 className="text-3xl font-extrabold text-center text-slate-800 mb-8">Gallery</h2>
-        <p className="text-center text-slate-600 text-lg mb-12">Explore highlights from InnovestHack 2025.</p>
-        <div className="w-screen h-[700px] flex flex-col justify-center gap-12 overflow-x-hidden">
-          {imagesReady &&
-            rows.map((row, i) => (
-              <CarouselRow
-                key={i}
-                images={row}
-                speed={speeds[i % speeds.length]}
-                reverse={i % 2 === 1}
-              />
-            ))}
+        {/* Indicator Dots */}
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-3 h-3 rounded-full ${
+                index === currentIndex ? "bg-white" : "bg-gray-500"
+              }`}
+            />
+          ))}
         </div>
       </div>
+
+      <style>{`
+        @keyframes slideUp {
+          from { opacity: 0; transform: translate(-50%, 20px); }
+          to { opacity: 1; transform: translate(-50%, 0); }
+        }
+        .animate-slide-up {
+          animation: slideUp 0.8s ease-out;
+        }
+      `}</style>
     </section>
   );
 };
 
-export default TiledGallery;
+export default KenBurnsSlideshow;
