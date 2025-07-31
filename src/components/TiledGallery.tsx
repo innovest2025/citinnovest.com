@@ -57,7 +57,7 @@ const KenBurnsSlideshow: React.FC = () => {
   };
 
   return (
-    <section className="w-full bg-black py-12 flex flex-col items-center text-white">
+    <section className="w-full bg-white py-12 flex flex-col items-center text-white">
       <h2 className="text-3xl font-bold mb-6">Gallery</h2>
       <div className="relative w-full max-w-6xl h-[600px] rounded-xl overflow-hidden shadow-xl">
         {images.map((image, index) => (
@@ -76,7 +76,7 @@ const KenBurnsSlideshow: React.FC = () => {
             />
             {/* Caption */}
             {index === currentIndex && (
-              <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 bg-black/50 px-6 py-3 rounded-lg text-xl font-semibold animate-slide-up">
+              <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 bg-white/50 px-6 py-3 rounded-lg text-xl font-semibold animate-slide-up">
                 {image.caption}
               </div>
             )}
