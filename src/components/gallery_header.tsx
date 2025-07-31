@@ -308,7 +308,7 @@ const EventsGallery = () => {
             ></div>
           </div>
           <div className="flex justify-center mt-6 space-x-3">
-            {currentEvent.images.map((imageName, index) => (
+            {currentEvent.images.map((currentImage, index) => (
               <button
                 key={index}
                 onClick={() => {
