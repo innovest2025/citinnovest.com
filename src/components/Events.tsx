@@ -191,7 +191,7 @@ const Schedule = () => {
 
   const handleKnowMore = (day: string) => {
     if (day === "Day 2") {
-      window.location.href = "/InnovestHack";
+      window.location.href = "/#InnovestHack";
     } else if (day === "Day 1" || day === "Day 3") {
       setSelectedDay(day);
       setModalOpen(true);
