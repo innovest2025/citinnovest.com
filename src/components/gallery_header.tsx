@@ -16,6 +16,18 @@ import w1 from "../../assest/w1.jpeg";
 import w2 from "../../assest/w2.jpeg";
 import w3 from "../../assest/w3.jpeg";
 import w4 from "../../assest/w4.jpeg";
+import m1 from "../../assest/m1.jpeg";
+import m2 from "../../assest/m2.jpeg";
+import m3 from "../../assest/m3.jpeg";
+import m4 from "../../assest/m4.jpeg";
+import h1 from "../../assest/h1.jpeg";
+import h2 from "../../assest/h2.jpeg";
+import h3 from "../../assest/h3.jpeg";
+import h4 from "../../assest/h4.jpeg";
+import i1 from "../../assest/i1.jpeg";
+import i2 from "../../assest/i2.jpeg";
+import i3 from "../../assest/i3.jpeg";
+import i4 from "../../assest/i4.jpeg";
 
 
 const EventsGallery = () => {
@@ -285,7 +297,14 @@ const EventsGallery = () => {
           <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden group">
             <div className="aspect-[16/10] relative">
               <img
-                src={`../../assest/${currentImage}.jpeg`}
+                src={
+                  // Map event keys to their respective image arrays
+                  (selectedEvent === "workshop" && [w1, w2, w3, w4][currentImageIndex % 4]) ||
+                  (selectedEvent === "masterclass" && [m1, m2, m3, m4][currentImageIndex % 4]) ||
+                  (selectedEvent === "hackathon" && [h1, h2, h3, h4][currentImageIndex % 4]) ||
+                  (selectedEvent === "inauguration" && [i1, i2, i3, i4][currentImageIndex % 4]) ||
+                  w1
+                }
                 alt={`${currentEvent.title}`}
                 className="w-full h-full object-cover transition-all duration-1000 ease-in-out transform group-hover:scale-105"
                 key={currentImageIndex}
@@ -322,7 +341,14 @@ const EventsGallery = () => {
                 }`}
               >
                 <img
-                  src={`../../assest/${imageName}.jpeg`}
+                  src={
+                    // Map event keys to their respective image arrays for thumbnails
+                    (selectedEvent === "workshop" && [w1, w2, w3, w4][index % 4]) ||
+                    (selectedEvent === "masterclass" && [m1, m2, m3, m4][index % 4]) ||
+                    (selectedEvent === "hackathon" && [h1, h2, h3, h4][index % 4]) ||
+                    (selectedEvent === "inauguration" && [i1, i2, i3, i4][index % 4]) ||
+                    w1
+                  }
                   alt={`${currentEvent.title} - ${index}`}
                   className="w-16 h-12 object-cover"
                 />
