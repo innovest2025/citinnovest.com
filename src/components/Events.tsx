@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Clock, MapPin, User, X } from "lucide-react";
+import { useNavigate } from "react-router-dom";  // ✅ Import navigation hook
 
 // Types
 interface EventType {
   title: string;
+  venue: string;
   description: string;
   formLink: string;
   speaker?: string;
@@ -29,30 +31,33 @@ const EventModal: React.FC<EventModalProps> = ({ isOpen, onClose, day }) => {
     "Day 1": [
       {
         title: "Ideathon",
+        venue: "Main Auditorium",
         description:
           "Dive into a high-energy brainstorming challenge where innovation meets creativity. Pitch your unique solutions to real-world problems and compete with the best minds!",
-        formLink: "https://forms.gle/tkeKPGQ4VkHJBnjBA",
+        formLink: "https://forms.gle/tkeKPGQ4VKH1BnjBA",
       },
       {
         title: "Project Competition",
+        venue: "Innovation Theater",
         description:
           "Showcase your innovative projects and prototypes in front of industry experts. Gain valuable feedback and recognition for your hard work and creativity.",
-        formLink: "https://forms.gle/tkeKPGQ4VkHJBnjBA",
+        formLink: "https://forms.gle/tkeKPGQ4VKH1BnjBA",
       },
     ],
     "Day 3": [
       {
         title: "Product Showcase",
+        venue: "Tech Theater",
         description:
           "Experience the latest innovations from startups and entrepreneurs. Explore groundbreaking products and services that are shaping the future of technology.",
-        formLink: "https://forms.gle/p5JUZuVY3Utf3Gn77",
+        formLink: "https://forms.gle/example3",
       },
       {
         title: "Demo day",
-
+        venue: "Sustainability Hub",
         description:
           "Join us for an exciting Demo Day where startups showcase their innovative solutions. Experience the future of technology and entrepreneurship firsthand!",
-        formLink: "https://forms.gle/zFXDyKMSEraLkDqc8",
+        formLink: "https://forms.gle/zFXDYKMSeraLkbqC8",
       },
     ],
   };
@@ -82,6 +87,9 @@ const EventModal: React.FC<EventModalProps> = ({ isOpen, onClose, day }) => {
                 <h4 className="font-semibold text-lg text-gray-900">
                   {event.title}
                 </h4>
+                <p className="text-gray-600 flex items-center mt-1">
+                  <MapPin className="h-4 w-4 mr-2" /> {event.venue}
+                </p>
                 <p className="text-sm text-gray-700 mt-2 leading-relaxed">
                   {event.description}
                 </p>
@@ -115,25 +123,17 @@ const EventModal: React.FC<EventModalProps> = ({ isOpen, onClose, day }) => {
 const Schedule = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedDay, setSelectedDay] = useState("");
+  const navigate = useNavigate(); // ✅ Initialize navigate
+
   const days = [
     {
       date: "August 18, 2025",
       day: "Day 1",
       theme: "IgniteX",
       events: [
-        {
-          time: "",
-          title: "Inauguration Ceremony",
-        },
-        {
-          time: "",
-          title: "Ideathon",
-        },
-
-        {
-          time: "",
-          title: "Student Project Showcase",
-        },
+        { time: "", title: "Inauguration Ceremony", venue: "Main Lobby" },
+        { time: "", title: "Ideathon", venue: "Main Auditorium" },
+        { time: "", title: "Student Project Showcase", venue: "Innovation Theater" },
       ],
     },
     {
@@ -141,23 +141,10 @@ const Schedule = () => {
       day: "Day 2",
       theme: "Deep Sprint 2025",
       events: [
-        {
-          time: "08:00 - 08:30",
-          title: "Inaugration on hackathon",
-        },
-        {
-          time: "08:30 - 11:00",
-          title: "Round judgement - 1",
-        },
-        {
-          time: "11:00 - 01:00",
-          title: "Round judgement - 2",
-          //speaker: "Networking Event",
-        },
-        {
-          time: "01:00 - 03:00",
-          title: "Pitching session",
-        },
+        { time: "08:00 - 08:30", title: "Inaugration on hackathon", venue: "Main Auditorium" },
+        { time: "08:30 - 11:00", title: "Round judgement - 1", venue: "Workshop Room B" },
+        { time: "11:00 - 01:00", title: "Round judgement - 2", venue: "Exhibition Hall" },
+        { time: "01:00 - 03:00", title: "Pitching session", venue: "Fireside Lounge" },
       ],
     },
     {
@@ -165,38 +152,23 @@ const Schedule = () => {
       day: "Day 3",
       theme: "Demo Day",
       events: [
-        {
-          time: "",
-          title: "Product Showcase",
-        },
-        {
-          time: "",
-          title: "Demo Day",
-        },
-        {
-          time: "",
-          title: "CITBIF Innovation Drive",
-        },
-        {
-          time: "",
-          title: "CITBIF Innovation Grant Challenge (Closed)",
-        },
-        {
-          time: "",
-          title: "Validation and Closing Ceremony",
-        },
+        { time: "", title: "Product Showcase", venue: "Tech Theater" },
+        { time: "", title: "Demo Day", venue: "Sustainability Hub" },
+        { time: "", title: "CITBIF Innovation Drive", venue: "Main Auditorium" },
+        { time: "", title: "CITBIF Innovation Grant Challenge (Closed)", venue: "Grand Ballroom" },
+        { time: "", title: "Validation and Closing Ceremony", venue: "Main Auditorium" },
       ],
     },
   ];
 
   const handleKnowMore = (day: string) => {
-  if (day === "Day 2") {
-    window.location.href = `/citinnovest.com/innovesthack`;
-  } else if (day === "Day 1" || day === "Day 3") {
-    setSelectedDay(day);
-    setModalOpen(true);
-  }
-};
+    if (day === "Day 2") {
+      navigate("/innovesthack"); // ✅ Use navigate instead of window.location.href
+    } else if (day === "Day 1" || day === "Day 3") {
+      setSelectedDay(day);
+      setModalOpen(true);
+    }
+  };
 
   const closeModal = () => {
     setModalOpen(false);
@@ -261,6 +233,10 @@ const Schedule = () => {
                         {event.speaker}
                       </div>
                     )}
+                    <div className="flex items-center text-sm text-gray-500">
+                      <MapPin size={16} className="mr-2" />
+                      {event.venue}
+                    </div>
                   </div>
                 ))}
               </div>
