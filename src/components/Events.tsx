@@ -34,14 +34,14 @@ const EventModal: React.FC<EventModalProps> = ({ isOpen, onClose, day }) => {
         venue: "Main Auditorium",
         description:
           "Dive into a high-energy brainstorming challenge where innovation meets creativity. Pitch your unique solutions to real-world problems and compete with the best minds!",
-        formLink: "https://forms.gle/tkeKPGQ4VKH1BnjBA",
+        formLink: "https://forms.gle/tkeKPGQ4VkHJBnjBA",
       },
       {
         title: "Project Competition",
         venue: "Innovation Theater",
         description:
           "Showcase your innovative projects and prototypes in front of industry experts. Gain valuable feedback and recognition for your hard work and creativity.",
-        formLink: "https://forms.gle/tkeKPGQ4VKH1BnjBA",
+        formLink: "https://forms.gle/tkeKPGQ4VkHJBnjBA",
       },
     ],
     "Day 3": [
@@ -50,14 +50,14 @@ const EventModal: React.FC<EventModalProps> = ({ isOpen, onClose, day }) => {
         venue: "Tech Theater",
         description:
           "Experience the latest innovations from startups and entrepreneurs. Explore groundbreaking products and services that are shaping the future of technology.",
-        formLink: "https://forms.gle/example3",
+        formLink: "https://forms.gle/p5JUZuVY3Utf3Gn77",
       },
       {
         title: "Demo day",
         venue: "Sustainability Hub",
         description:
           "Join us for an exciting Demo Day where startups showcase their innovative solutions. Experience the future of technology and entrepreneurship firsthand!",
-        formLink: "https://forms.gle/zFXDYKMSeraLkbqC8",
+        formLink: "https://forms.gle/zFXDyKMSEraLkDqc8",
       },
     ],
   };
