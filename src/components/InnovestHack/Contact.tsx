@@ -29,7 +29,7 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      content: "+91 99424 09311, +91 89256 50670",
+      content: "+91 89256 50670",
       color: "from-purple-400 to-purple-600",
     },
     {
