@@ -61,14 +61,14 @@ const EventsGallery = () => {
       title: "Master Class",
       icon: <Lightbulb className="h-8 w-8" />,
       color: "from-yellow-500 to-orange-600",
-      images: [m1, m2, m3, m4],
+      images: [h1, m2, m3, m4],
       gradient: "bg-gradient-to-br from-yellow-500 via-orange-500 to-red-500",
     },
     hackathon: {
       title: "Hackathon",
       icon: <Zap className="h-8 w-8" />,
       color: "from-green-500 to-teal-600",
-      images: [h1, h2, h3, h4],
+      images: [m1, h2, h3, h4],
       gradient: "bg-gradient-to-br from-green-500 via-teal-500 to-cyan-600",
     },
     inauguration: {
