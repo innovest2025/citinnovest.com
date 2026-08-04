@@ -43,7 +43,7 @@ const phases = [
     description:
       "Submit team details along with chosen domain, problem statement, and proposed solution.",
     color: "from-blue-500 to-blue-600",
-    date: "19/7/2025",
+    date: "1/08/2026",
   },
   {
     icon: Filter,
@@ -51,7 +51,7 @@ const phases = [
     description:
       "Top 100 entries will be selected based on identified problem, proposed solution, clarity, relevance, and innovation.",
     color: "from-purple-500 to-purple-600",
-    date: "5/8/2025",
+    date: "14/08/2026",
   },
   {
     icon: Video,
@@ -59,7 +59,7 @@ const phases = [
     description:
       "Selected ideas go through expert online screening and mentoring.",
     color: "from-green-500 to-green-600",
-    date: "6/8/2025 – 11/8/2025",
+    date: "17/8/2025 – 21/8/2026",
   },
   {
     icon: CheckCircle,
@@ -67,14 +67,14 @@ const phases = [
     description:
       "Around 30 top teams will be chosen for on-site hackathon participation.",
     color: "from-orange-500 to-orange-600",
-    date: "12/8/2025",
+    date: "28/8/2026",
   },
   {
     icon: Trophy,
     title: "Hackathon Day",
     description: "1-day onsite event at Chennai Institute of Technology.",
     color: "from-red-500 to-red-600",
-    date: "19/8/2025",
+    date: "02/09/2026",
   },
 ];
 

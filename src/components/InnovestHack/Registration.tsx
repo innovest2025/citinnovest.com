@@ -42,8 +42,7 @@ const Registration = () => {
 
   const handleRegister = () => {
     window.open(
-      "https://docs.google.com/forms/d/e/1FAIpQLSdtrK7hqgUEGfDnP_03PKnShTZH05C5tLzmvIJ53F3pMFhmuw/viewform",
-      "_blank"
+      "https://docs.google.com/forms/d/e/1FAIpQLSeU7Pe9VXV0zCQnSODBmiaz2JhmV1q7RpzVwqyuOIGLrbYZZA/viewform?usp=sharing&ouid=112299551847415679814"
     );
   };
 

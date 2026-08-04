@@ -145,7 +145,7 @@ const About = () => {
             >
               Sprint
             </span>
-            <span className="text-purple-700"> 2025</span>
+            <span className="text-purple-700"> 2026</span>
           </h1>
 
           <p className="text-xl text-slate-600 leading-relaxed">
