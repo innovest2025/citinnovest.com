@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import About from "../components/About";
-import Events from "../components/Events";
+import Events from "../components/Events";      // ✅ fixed import
 import Domains from "../components/Domains";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
