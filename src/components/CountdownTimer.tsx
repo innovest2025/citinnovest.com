@@ -7,28 +7,36 @@ interface TimeLeft {
   seconds: number;
 }
 
-const CountdownTimer = () => {
+interface CountdownTimerProps {
+  targetDate?: string; // optional – default is Sept 1, 2026
+}
+
+const CountdownTimer: React.FC<CountdownTimerProps> = ({ 
+  targetDate = "2026-09-01T00:00:00" 
+}) => {
+  // 🐞 Debug: check which date is actually being used
+  console.log('🔍 CountdownTimer targetDate:', targetDate);
+
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
     hours: 0,
     minutes: 0,
-    seconds: 0
+    seconds: 0,
   });
 
   useEffect(() => {
-    // Set target date to August 18th, 2025 at 8:00 AM
-    const targetDate = new Date('2025-08-18T08:00:00');
+    const target = new Date(targetDate).getTime();
 
     const timer = setInterval(() => {
-      const currentTime = new Date().getTime();
-      const difference = targetDate.getTime() - currentTime;
+      const now = new Date().getTime();
+      const difference = target - now;
 
       if (difference > 0) {
         setTimeLeft({
           days: Math.floor(difference / (1000 * 60 * 60 * 24)),
           hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
           minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
-          seconds: Math.floor((difference % (1000 * 60)) / 1000)
+          seconds: Math.floor((difference % (1000 * 60)) / 1000),
         });
       } else {
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
@@ -36,14 +44,20 @@ const CountdownTimer = () => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [targetDate]);
 
   const timeUnits = [
     { label: 'Days', value: timeLeft.days },
     { label: 'Hours', value: timeLeft.hours },
     { label: 'Minutes', value: timeLeft.minutes },
-    { label: 'Seconds', value: timeLeft.seconds }
+    { label: 'Seconds', value: timeLeft.seconds },
   ];
+
+  const formattedDate = new Date(targetDate).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
 
   return (
     <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 animate-fade-in animation-delay-500">
@@ -66,12 +80,8 @@ const CountdownTimer = () => {
           </div>
         ))}
       </div>
-      <div className="text-center mt-4">
-        <p className="text-white/80 text-sm">
-          Showdown: 18th August 2025
-        </p>
-      </div>
-    
+      <p className="text-center text-white mt-6 text-sm">
+      </p>
     </div>
   );
 };

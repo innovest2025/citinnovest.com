@@ -6,6 +6,7 @@ import citbifLogo from '../img/CITBIF logo Final-02 (1).png';
 import innovest from '../img/innovest.png';
 import citil from '../img/CITIL.jpeg';
 import Gallery_Header from './GalleryHeader';
+import Events_Gallery2025 from './EventsGallery2025';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -74,19 +75,19 @@ const Header = () => {
   const eventDays = [
     { 
       name: 'Day 1', 
-      date: 'August 18, 2025',
+      date: 'September 1, 2026',
       theme: 'IgniteX',
       href: '#day1'
     },
     { 
       name: 'Day 2', 
-      date: 'August 19, 2025',
-      theme: 'Deep Sprint 2025',
+      date: 'September 2, 2026',
+      theme: 'Deep Sprint 2026',
       href: '#day2'
     },
     { 
       name: 'Day 3', 
-      date: 'August 20, 2025',
+      date: 'September 3, 2026',
       theme: 'Demo Day',
       href: '#day3'
     }
@@ -198,14 +199,22 @@ const Header = () => {
                 </div>
               ))}
             </nav>
-            
-            {/* DeepSprint Button */}
+             {/* DeepSprint Button */}
             <Link
               to="/innovesthack"
               className="ml-2 bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white px-5 py-2.5 rounded-md text-sm font-medium shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 whitespace-nowrap"
             >
-              DeepSprint 2025
+              DeepSprint 2026
             </Link>
+
+            {/* DeepSprint Button */}
+            <Link
+              to="/gallery/2025"
+              className="ml-2 bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white px-5 py-2.5 rounded-md text-sm font-medium shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 whitespace-nowrap"
+            >
+               Gallery of 2025
+            </Link>
+
             {/* DeepSprint Button */}
              <Link
               to="/gallery_header"
@@ -279,9 +288,20 @@ const Header = () => {
                   className="block w-full text-center bg-gradient-to-r from-blue-600 to-blue-800 text-white px-4 py-2.5 rounded-md text-sm font-medium shadow-sm"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  DeepSprint 2025
+                  DeepSprint 2026 
                 </Link>
               </div>
+
+              <div className="pt-2 mt-2 border-t border-gray-200">
+                <Link
+                  to="/gallery/2025"
+                  className="block w-full text-center bg-gradient-to-r from-blue-600 to-blue-800 text-white px-4 py-2.5 rounded-md text-sm font-medium shadow-sm"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Gallery of 2025 
+                </Link>
+              </div>
+
               <div className="pt-2 mt-2 border-t border-gray-200">
                 <Link
                   to="/#gallery_header"

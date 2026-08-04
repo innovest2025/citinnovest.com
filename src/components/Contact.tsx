@@ -46,7 +46,7 @@ const Contact = () => {
           </h2>
           <div className="w-24 h-1 bg-orange-500 mx-auto mb-8"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Have questions about Innovest 2025? We're here to help! Reach out to
+            Have questions about Innovest 2026? We're here to help! Reach out to
             us through any of the channels below or send us a message using the
             contact form.
           </p>

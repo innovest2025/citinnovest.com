@@ -188,7 +188,7 @@ const About = () => {
               <div className="absolute -bottom-4 -left-4 w-32 h-32 opacity-10 rounded-full animate-pulse group-hover:animate-bounce"></div>
 
               <h4 className="text-2xl font-bold mb-6 animate-in slide-in-from-top duration-600 delay-800 relative z-10 group-hover:text-orange-200 transition-colors duration-300">
-                Why Attend Innovest 2025?
+                Why Attend Innovest 2026?
                 <Zap className="inline-block ml-2 h-6 w-6 text-orange-400 animate-pulse" />
               </h4>
               <ul className="space-y-4 relative z-10">

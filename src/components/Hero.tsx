@@ -4,7 +4,6 @@ import CountdownTimer from './CountdownTimer';
 import innovestLogo from '../img/innovest.png';
 import { motion } from 'framer-motion';
 import SectionSquares from './SectionSquares';
-import Events from './Event/Schedule';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -16,6 +15,9 @@ const fadeUp = {
 };
 
 const Hero = () => {
+  // ✅ UPDATED: countdown target date is now September 1, 2026
+  const targetDate = '2026-09-01T00:00:00';
+
   return (
     <section
       id="home"
@@ -54,7 +56,7 @@ const Hero = () => {
                 className="h-28 md:h-40 w-auto mb-6 drop-shadow-lg"
               />
               <p className="text-xl lg:text-2xl text-blue-100 mb-8 leading-relaxed">
-                Empowering Innovation, Inspiring Excellence
+               Empowering Innovation, Inspiring Excellence
               </p>
               <p className="text-lg text-blue-200 mb-8 max-w-2xl">
                 Join us for the most prestigious innovation and investment summit where groundbreaking
@@ -69,7 +71,7 @@ const Hero = () => {
                 <Calendar className="h-6 w-6 text-orange-400" />
                 <div>
                   <p className="text-sm text-blue-200">Date</p>
-                  <p className="font-semibold">August 18 - 20, 2025</p>
+                  <p className="font-semibold">September 1, 2026</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
@@ -88,7 +90,7 @@ const Hero = () => {
               </div>
             </motion.div>
 
-            {/* CTA - Linked to Schedule */}
+            {/* CTA */}
             <motion.div custom={3} variants={fadeUp} className="flex flex-col sm:flex-row gap-4">
               <a
                 href="#schedule"
@@ -108,9 +110,8 @@ const Hero = () => {
             custom={4}
             className="lg:pl-12"
           >
-            {/* Heading Added */}
             <h2 className="text-2xl font-bold text-white mb-6 text-center lg:text-center">
-              Statistics of Innovest'24
+              Statistics of Innovest'25
             </h2>
             <div className="grid grid-cols-2 gap-6 mb-8">
               {[
@@ -130,8 +131,9 @@ const Hero = () => {
                 </motion.div>
               ))}
             </div>
+            {/* Countdown – now passes the correct date */}
             <motion.div variants={fadeUp} custom={5}>
-              <CountdownTimer />
+              <CountdownTimer targetDate={targetDate} />
             </motion.div>
           </motion.div>
         </div>

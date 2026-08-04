@@ -26,7 +26,7 @@ const Footer = () => {
           {/* Company Info - Left Column */}
           <div className="flex flex-col flex-1 space-y-4 text-left pr-8"> {/* text-left for left alignment of the section */}
             <div className="text-xl font-bold">
-              INNOVEST <span className="text-orange-500">2025</span>
+              INNOVEST <span className="text-orange-500">2026</span>
             </div>
             {/*
               For text justification, `text-justify` is applied.
