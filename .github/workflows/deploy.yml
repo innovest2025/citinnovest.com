@@ -2,7 +2,11 @@ name: deployment
 
 on:
   push:
-    branches: main
+    branches:
+      - main
+
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -16,11 +20,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "24"
+          cache: npm
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: npm ci
 
-      - name: Build Project
+      - name: Build project
         run: npm run build
 
       - name: Deploy to GitHub Pages
@@ -28,5 +33,5 @@ jobs:
         with:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
           publish_dir: ./dist
-          external_repository: innovest2025/innovest2025.github.io
-          publish_branch: main
+          publish_branch: gh-pages
+          keep_files: true
