@@ -6,7 +6,7 @@ import citbifLogo from '../img/CITBIF logo Final-02 (1).png';
 import innovest from '../img/innovest.png';
 import citil from '../img/CITIL.jpeg';
 import Gallery_Header from './GalleryHeader';
-import Events_Gallery2025 from './EventsGallery2025';
+import EventsGallery2025 from './EventsGallery2025/index.tsx';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
