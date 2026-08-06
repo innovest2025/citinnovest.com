@@ -320,4 +320,4 @@ const EventsGallery = () => {
   )
 }
 
-export default EventsGallery
+export default EventsGallery2025
