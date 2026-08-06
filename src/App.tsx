@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage.tsx";
 import InnovestHackPage from "./pages/InnovestHackPage.tsx";
-import EventsGallery2025 from "./components/EventsGallery2025/index.tsx";
+import EventsGallery from "./components/EventsGallery2025/index.tsx";
 import EventsGallery from "./components/gallery_header.tsx";
 function App() {
   return (
